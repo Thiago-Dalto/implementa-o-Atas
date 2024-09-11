@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listar Reuniões</title>
+</head>
+<body>
+    <h1>Lista de Reuniões</h1>
+    <a href="/reunioes/novo">Nova Reunião</a>
+    <ul>
+        <li th:each="reuniao : ${reunioes}">
+            <span th:text="${reuniao.titulo}">Título da Reunião</span>
+            <a th:href="@{/reunioes/{id}(id=${reuniao.id})}">Editar</a>
+        </li>
+    </ul>
+</body>
+</html>
